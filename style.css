@@ -1,0 +1,615 @@
+@import "https://unpkg.com/open-props";
+
+body {
+  font-family: "Play", sans-serif;
+  background-color: #0c0c0c;
+  background-size: cover;
+  scroll-behavior: smooth;
+  margin: 0;
+}
+
+#intro {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.8rem;
+  color: white;
+  filter: grayscale(0.2);
+}
+
+#intro::after {
+  content: '|'; 
+  color: rgb(218, 120, 8); 
+  width: 0;
+}
+
+.highlight {
+  color: rgb(218, 120, 8); 
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+ /*NavBar*/
+.MainBar {
+  align-items: center;
+  background: transparent;
+  display: flex;
+  height: 4rem;
+  justify-content: space-between;
+  padding-left: 1.5625rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+li {
+  padding: 0 1.25rem;
+}
+
+nav {
+  margin-right: 5.563rem;
+  width: calc(100% - 4rem);
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav a {
+  padding: .5em .8em;
+  color: rgba(255,255,255,.5);
+  position: relative;
+  text-decoration: none;
+  font-size: 20px;
+  overflow: hidden;
+}
+
+.nav a::before,
+.nav a::after {
+  content: '';
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  transition: all .35s ease;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+    animation-delay: calc(.2s * var(--i)); 
+}
+
+.nav a::before {
+  content: '';
+  right: 0;
+  top: 0;
+  border-top: 3px solid rgb(218, 120, 8); 
+  border-right: 3px solid rgb(218, 120, 8); 
+  transform: translate(-100%, 50%);
+  filter: grayscale(0.2);
+}
+
+.nav a:after {
+  content: '';
+  left: 0;
+  bottom: 0;
+  border-bottom: 3px solid rgb(218, 120, 8); 
+  border-left: 3px solid rgb(218, 120, 8); 
+  transform: translate(100%, -50%);
+  filter: grayscale(0.2);
+}
+
+.nav a:hover:before,
+.nav a:hover:after {
+  transform: translate(0,0);
+  opacity: 1;
+}
+
+.nav a:hover {
+  color: #ffffff;
+}
+
+@keyframes slideBottom {
+  from {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.nav li {
+  animation: slideBottom 5s ease forwards;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+.nav li:nth-child(odd) {
+  animation-delay: calc(0.1s * var(--i)) + 0.8s; 
+}
+
+/*Profile picture*/
+.ProfileContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.2rem 0;
+  filter: grayscale(0.2);
+}
+
+.ProfilePic {
+  margin-right: 1rem;
+  filter: grayscale(0.3);
+	transform: translateY(0px);
+	animation: float 10s ease-in-out infinite;
+	img { width: auto; height: auto; }
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-40px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+.TextContainer {
+  flex: 2;
+}
+
+.ProfilePic img {
+  margin-top: 6rem;
+  margin-left: 15rem;
+  margin-right: 8rem;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/*About Me*/
+.AboutMe {
+  display: grid;
+  place-content: center;
+  gap: 1vh;
+  min-height: 100vh;
+  width: min(60ch, 100vw - 2rem);
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  background-color: transparent;
+  color: hsl(310, 100%, 95%);
+  filter: grayscale(0.3);
+  transform: translateY(100%);
+  animation: slideInFromBottom 3s ease forwards;
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.AboutMe h1 {
+  color: rgb(218, 120, 8); 
+}
+
+::selection {
+  background-color: hsl(310, 100%, 65%);
+  color: hsl(230, 30%, 15%);
+  -webkit-text-fill-color: hsl(230, 30%, 15%);
+}
+
+.AboutMe blockquote {
+  border-left: 5px solid;
+  margin-left: 0;
+  padding: 1rem 0 1rem 2rem;
+  font-size: 2rem;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(
+    35deg, hsl(310, 100%, 65%), hsl(160, 100%, 65%)
+  );
+
+  p {
+    margin: 0;
+    padding-left: 1rem;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/*Skills container*/
+.Skills {
+  position: relative; 
+}
+
+.SkillContainer {
+  background: url(./Resources/background1.jpg); 
+  background-size: cover;
+  padding: 5rem; 
+  box-shadow: 0 2px 2px rgb(94, 162, 226), 0 -2px 2px rgba(226, 225, 225, 0.637);
+  filter: grayscale(0.3);
+}
+
+.Skills h2 {
+  text-align: right;
+  font-size: 2.5rem;
+  color: rgb(255, 255, 255);
+  text-shadow: 50px -8px 1px rgb(0, 0, 0);
+  margin-bottom: 5rem;
+}
+
+.SkillIcons {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-auto-rows: auto;
+  justify-content: flex-end; 
+  gap: 0.5rem;
+  background-color: rgb(255, 255, 255); 
+  max-width: 20rem; 
+  margin-left: auto; 
+  padding: 2rem; 
+  margin-right: 12rem;
+  box-shadow: 10px -8px 1px rgba(0, 0, 0, 0.719); 
+  filter: none;
+}
+
+.SkillIcons img {
+  max-width: 100%; 
+  max-height: 5rem;
+  padding: 0.5rem; 
+  transition: transform 0.5s ease-in-out;
+}
+
+@keyframes skillIconAppear {
+from {
+  opacity: 0;
+  transform: translateY(40px);
+}
+to {
+  opacity: 1;
+  transform: translateY(0);
+  }
+}
+
+.skill-icon-appear {
+  animation: skillIconAppear 5s ease-out forwards;
+}
+
+/*Projects*/
+.ProjectsTitle h1 { 
+  color: rgb(218, 120, 8); 
+  font-size: 4rem; 
+  text-align: center;
+  filter: grayscale(0.3);
+  margin: 8rem auto;
+}
+
+.ProjectsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  column-gap: 0.2rem;
+  row-gap: 4rem;
+  justify-items: center;
+  margin-top: 8rem;
+}
+
+.Projects {
+  display: flex;
+  width: 100%;
+  max-width: 35rem;
+  height: 20rem;
+  text-align: center;
+  border-radius: 1rem;
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  border: 2px solid transparent;
+  filter: blur(2px);
+}
+
+.Projects:hover {
+  transform: translateY(-5px);
+  border-radius: 0px;
+  border: 2px solid white;
+  box-shadow: 8px -8px 0px #e7e4e1;
+  filter: blur(0);
+}
+
+.Projects img {
+  display: block;
+  width: 100%;
+  height: 100%; 
+  object-fit: cover; 
+  border-radius: 1rem;
+  filter: grayscale(0.5);
+}
+
+.Projects:hover img {
+  filter: grayscale(1);
+  border-radius: revert;
+  filter: grayscale(0);
+}
+
+.project-details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.973);
+  box-sizing: border-box;
+  transition: opacity 0.9s, transform 0.s;
+  opacity: 0;
+}
+
+.Projects:hover .project-details {
+  opacity: 1;
+  border-radius: none;
+}
+
+.project-info {
+  color: rgb(247, 244, 244);
+  font-size: 1.2rem;
+}
+
+.project-info h3 {
+  font-size: 1.5rem;
+}
+
+.project-info p {
+  font-size: 0.8rem;
+}
+
+.buttons button {
+  font-family: "Play", sans-serif;
+  font-size: 1rem; 
+  color: #0c0c0c; 
+  background: #f2f2f2c0; 
+  border: 0;
+  margin: 0.5rem;
+  padding: 0.5rem 0.5rem; 
+  transform: translateY(0) scale(1);
+  transition: transform 0.2s;
+  position: relative;
+}
+
+.buttons button:hover {
+  --y: -10;
+  --scale: 1;
+  --border-scale: 1;
+  color: rgb(218, 120, 8); 
+}
+
+.buttons button:active {
+  --y: 5%;
+  --scale: 0.9;
+  --border-scale: 0.9, 0.8;
+}
+
+.buttons button:before {
+  content: "";
+  position: absolute;
+  inset: calc(var(--size-1) * -1.5);
+  border: var(--size-1) solid rgb(218, 120, 8); 
+  transform: scale(var(--border-scale, 0));
+  transition: transform 0.5s;
+
+  --angle-one: 105deg;
+  --angle-two: 290deg;
+  --spread-one: 30deg;
+  --spread-two: 40deg;
+  --start-one: calc(var(--angle-one) - (var(--spread-one) * 0.5));
+  --start-two: calc(var(--angle-two) - (var(--spread-two) * 0.5));
+  --end-one: calc(var(--angle-one) + (var(--spread-one) * 0.5));
+  --end-two: calc(var(--angle-two) + (var(--spread-two) * 0.5));
+
+  mask: conic-gradient(
+    transparent 0 var(--start-one),
+    white var(--start-one) var(--end-one),
+    transparent var(--end-one) var(--start-two),
+    rgb(255, 255, 255) var(--start-two) var(--end-two),
+    transparent var(--end-two)
+  );
+
+  z-index: -1;
+}
+
+/* Contact*/
+.ContactContainer {
+  margin-top: 6rem;
+}
+
+.ContactContainer h1 {
+  margin-top: 5rem;
+  color: rgb(218, 120, 8); 
+  font-size: 2.5rem;
+  text-align: center;
+  filter: grayscale(0.2);
+}
+
+.social-icons {
+  padding: 1rem 0;
+}
+
+.social-icons ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.social-icons ul li {
+  list-style: none;
+}
+
+.social-icons ul li a {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 80px;
+  font-size: 35px;
+  margin: 0 10px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #fff;
+  z-index: 1;
+}
+
+.social-icons ul li a .icon {
+  position: relative;
+  color: #262626;
+  transition: 0.5s;
+  z-index: 3;
+}
+
+.social-icons ul li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.social-icons ul li a:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.social-icons ul li a:hover:before {
+  top: 0;
+}
+
+.social-icons ul li:nth-child(1) a:before{
+  background: #3b5999;
+}
+
+.social-icons ul li:nth-child(2) a:before{
+  background: #dd4b39;
+}
+
+/* Footer */
+.Footer {
+  color: #fff;
+  text-align: center;
+}
+
+
+
+/*--- Media queries for responsiveness ---*/
+@media only screen and (max-width: 768px) {
+.Skills h2 {
+  font-size: 2rem; 
+  text-align: left; 
+  margin-left: 1rem; 
+}
+
+.ProfilePic img {
+  max-width: 80%; 
+  margin: 0 auto; 
+}
+
+.SkillIcons {
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); 
+  max-width: 20rem;
+  margin: 0 auto; 
+}
+
+.ProfileContainer {
+  flex-direction: column; 
+  align-items: center; 
+  margin-top: 4rem; 
+}
+
+.TextContainer {
+  margin-top: 2rem; 
+}
+
+.ProjectsContainer {
+  grid-template-columns: 1fr; 
+  gap: 2rem; 
+  margin-top: 4rem; 
+}
+
+.Projects {
+  width: 100%; 
+  margin-bottom: 2rem; 
+}
+}
+
+@media only screen and (max-width: 480px) {
+.ProfilePic img {
+  max-width: 100%; 
+}
+
+.Skills h2 {
+  font-size: 1.8rem; 
+  margin-left: 0.5rem; 
+}
+
+
+.ProjectsTitle h2 {
+  font-size: 0.5rem; 
+  padding-top: 1rem; 
+}
+
+.ProjectsContainer {
+  grid-template-columns: 1fr; 
+  gap: 2rem; 
+  margin-top: 4rem;
+}
+
+.Projects {
+  width: 100%; 
+  height: auto;
+}
+
+.project-info {
+  font-size: 1rem;
+}
+
+.project-info h3 {
+  font-size: 1.2rem;
+}
+
+.project-info p {
+  font-size: 0.7rem;
+}
+
+.Projects button {
+  padding: 0.5rem;
+  font-size: 0.8rem;
+}
+}

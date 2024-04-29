@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" 
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<!--Header-->
+
+<header class="MainBar">
+    <nav>
+      <ul class="nav">
+      <li><a href="#home" >Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+</header> 
+
+<!--Profile picture and intro-->
+
+<div class="ProfileContainer" id="home">
+  <div class="ProfilePic">
+    <img src="./Resources/ProfilePhoto.jpg" alt="Profile Picture">
+  </div>
+  <div class="TextContainer">
+    <div id="intro"></div>
+  </div>
+</div>
+
+<!--About me-->
+
+  <div class="AboutMe">
+    <h1><code>::About Me</code></h1>
+    <p>I am a passionate full-stack web developer. I specialize in creating visually appealing and user-friendly websites and web applications that leave a lasting impression.
+      I have a background as full stack engineer, which has equipped me with a solid foundation in design principles in front-end and back-end development. My goal is to combine creativity with 
+      functionality to deliver exceptional web experiences. I have finished a profession certificate with Codecademy and I am skilled in HTML, CSS and JavaScript. One of my strengths is my ability 
+      to understand clients needs and translate them into visually captivating designs. I believe in a collaborative approach, working closely with clients to ensure their vision is realized in
+      the final product.</p>
+    <blockquote>
+      <p>“If debugging is the process of removing software bugs, then programming must be the process of putting them in.”</p>
+    </blockquote>
+  </div>
+
+<!--Skills-->
+<div class="SkillContainer" id="skills">
+<div class="Skills">
+  <h2>I have experience with these technologies</h2>
+    <div class="SkillIcons">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" width="150rem" height="150rem" alt="Logo" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" width="150rem" height="150rem" alt="Logo" />  
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" width="150rem" height="150rem" alt="Logo" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" width="150rem" height="150rem" alt="Logo" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg" width="150rem" height="150rem" alt="Logo" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" width="150rem" height="150rem" alt="Logo" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg" width="150rem" height="150rem" alt="Logo" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg" width="150rem" height="150rem" alt="Logo" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original-wordmark.svg" width="150rem" height="150rem" alt="Logo" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/heroku/heroku-original-wordmark.svg" width="150rem" height="150rem" alt="Logo" /> 
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg" width="150rem" height="150rem" alt="Logo" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" width="150rem" height="150rem" alt="Logo" />
+      </div>
+    </div>
+  </div>
+
+<!--Projects-->
+
+<div class="ProjectsTitle" id="projects">
+  <h1><code>::Projects</code></h1>
+</div>
+<div class="ProjectsContainer">
+  <div class="Projects">
+    <a href="#"><img src="./Resources/Soaps and Candles.png" alt="Soaps and Candles"> </a>
+    <div class="project-details">
+      <div class="project-info">
+        <h3>Soaps and Candles</h3>
+        <p>Full-stack e-commerce site built with react and node.js</p>
+      </div>
+      <div class="buttons">
+        <button onclick="window.open('https://github.com/GeorgeHolas/PERN-Soaps-and-Candles', '_blank')">View Project</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="Projects">
+    <a href="#"><img src="./Resources/Ghibli Studio Club.png" alt="Ghibli Studio Club"></a>
+    <div class="project-details">
+      <div class="project-info">
+        <h3>Ghibli Club Website</h3>
+        <p>Single responsive web page</p> 
+      </div>
+      <div class="buttons">
+        <button onclick="window.open('https://github.com/GeorgeHolas/Ghibli-Studio', '_blank')">View Project</button>
+        <button onclick="window.open('https://ghiblistudios.netlify.app', '_blank')">Live demo</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="Projects">
+    <a href="#"><img src="./Resources/Spotify Playlist Manager.jpg" alt="Spotify Playlist"></a>
+    <div class="project-details">
+      <div class="project-info">
+        <h3>Spotify Playlist</h3>
+        <p>Fullstack web application for creating and sharing playlists</p>
+      </div>
+      <div class="buttons">
+        <button onclick="window.open('https://github.com/GeorgeHolas/jammming', '_blank')">View Project</button>
+        <button onclick="window.open('https://jammmingreactapp.netlify.app', '_blank')">Live demo</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="Projects">
+    <a href="#"><img src="./Resources/Redit Client-Clone.png" alt="Reddit Client Clone"></a>
+    <div class="project-details">
+      <div class="project-info">
+        <h3>Reddit Client Clone</h3>
+        <p>Clone of reddit using react and redux</p>
+      </div>
+      <div class="buttons">
+        <button onclick="window.open('https://github.com/GeorgeHolas/reddit-client', '_blank')">View Project</button>
+        <button onclick="window.open('https://reddit-clientapp.netlify.app', '_blank')">Live demo</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="Projects">
+    <a href="#"><img src="./Resources/Pet Adopt.png" alt="Pet Adopt"></a>
+    <div class="project-details">
+      <div class="project-info">
+        <h3>Pet Adopt</h3>
+        <p>Fullstack web application for adopting pets</p>
+      </div>
+      <div class="buttons">
+        <button onclick="window.open('https://github.com/GeorgeHolas/Pet-Adopt', '_blank')">View Project</button>
+        <button onclick="window.open('https://adoptdogrouting.netlify.app/', '_blank')">Live demo</button>
+      </div>
+    </div>
+</div>
+
+<div class="Projects">
+  <a href="#"><img src="./Resources/Message Generator.png" alt="Message Genereator"></a>
+  <div class="project-details">
+    <div class="project-info">
+      <h3>Message Generator</h3>
+      <p>Web application that generates random inspirational quotes</p>
+    </div>
+    <div class="buttons">
+      <button onclick="window.open('https://github.com/GeorgeHolas/Generator-of-quotes', '_blank')">View Project</button>
+      <button onclick="window.open('https://message-generatorr.netlify.app', '_blank')">Live demo</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!--Contact-->
+
+
+  <div class="ContactContainer" id="contact">
+    <h1><code>::Contact Me</code></h1>
+    <div class="social-icons">
+    <ul>
+      <li>
+        <a href="https://www.linkedin.com/in/jiri-holas-b5b8a5270" target="_blank">
+          <i class="fab fa-linkedin-in icon"></i>
+        </a>
+      </li>
+      <li>
+        <a href="mailto:georgeholas404@gmail.com">
+          <i class="fab fa-google-plus-g icon"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Footer -->
+
+<footer class="Footer">
+  <p>Designed and developed by Jiri Holas &copy; 2024</p>
+</footer>
+
+
+</body>
+</html>

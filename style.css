@@ -143,27 +143,26 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0.2rem 0;
   filter: grayscale(0.2);
 }
 
 .ProfilePic {
   margin-right: 1rem;
-  filter: grayscale(0.3);
-	transform: translateY(0px);
-	animation: float 10s ease-in-out infinite;
+  filter: grayscale(0.4);
+	transform: translateY(0);
+	animation: float 5s ease-in-out infinite;
 	img { width: auto; height: auto; }
 }
 
 @keyframes float {
 	0% {
-		transform: translatey(0px);
+		transform: translatey(0);
 	}
 	50% {
-		transform: translatey(-40px);
+		transform: translatey(-20px);
 	}
 	100% {
-		transform: translatey(0px);
+		transform: translatey(0);
 	}
 }
 
@@ -180,12 +179,16 @@ ul {
 }
 
 /*About Me*/
+.hidden {
+  opacity: 0;
+}
+
 .AboutMe {
   display: grid;
   place-content: center;
   gap: 1vh;
   min-height: 100vh;
-  width: min(60ch, 100vw - 2rem);
+  width: min(60ch, 100vw - 0.5rem);
   margin-right: auto;
   margin-left: auto;
   font-size: 1.5rem;
@@ -194,7 +197,7 @@ ul {
   color: hsl(310, 100%, 95%);
   filter: grayscale(0.3);
   transform: translateY(100%);
-  animation: slideInFromBottom 3s ease forwards;
+  animation: slideInFromBottom 5s ease forwards;
 }
 
 @keyframes slideInFromBottom {
@@ -210,17 +213,14 @@ ul {
   color: rgb(218, 120, 8); 
 }
 
-::selection {
-  background-color: hsl(310, 100%, 65%);
-  color: hsl(230, 30%, 15%);
-  -webkit-text-fill-color: hsl(230, 30%, 15%);
+.AboutMe p {
+  font-size: 1.3rem;
 }
 
 .AboutMe blockquote {
   border-left: 5px solid;
   margin-left: 0;
   padding: 1rem 0 1rem 2rem;
-  font-size: 2rem;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(
@@ -232,17 +232,6 @@ ul {
     padding-left: 1rem;
     font-size: 1.4rem;
     letter-spacing: 1px;
-  }
-}
-
-@keyframes slideRight {
-  from {
-    transform: translateX(-50%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
   }
 }
 
@@ -443,7 +432,7 @@ to {
 
 /* Contact*/
 .ContactContainer {
-  margin-top: 6rem;
+  margin-top: 10rem;
 }
 
 .ContactContainer h1 {
@@ -525,7 +514,6 @@ to {
   color: #fff;
   text-align: center;
 }
-
 
 
 /*--- Media queries for responsiveness ---*/

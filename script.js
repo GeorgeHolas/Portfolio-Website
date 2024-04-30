@@ -17,7 +17,6 @@
 
    intro.innerHTML = currentText;
    
-
    // When reaching the end, start deleting
    if (index === text.length + 1) {
      isDeleting = true;
@@ -38,6 +37,29 @@
 
 // Start typing effect
 setTimeout(type, 200);
+
+
+// About Me animation 
+let firstScroll = true;
+let delayTimeout;
+
+window.addEventListener('scroll', () => {
+  if (firstScroll || !delayTimeout) {
+    document.querySelector('.AboutMe').classList.remove('hidden');
+
+    // Set flag to not show again
+    firstScroll = false; 
+
+    // Set a timeout for re-showing after 5 seconds
+    delayTimeout = setTimeout(() => {
+      delayTimeout = null;
+    }, 5000); 
+  }
+});
+
+window.addEventListener('load', () => {
+  firstScroll = true;
+});
 
 
 // NavBar animations 

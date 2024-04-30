@@ -1,43 +1,45 @@
  // Typing effect
- const intro = document.getElementById('intro');
- const text = "My name is Jiri <br><br>I am <span class='highlight'>Full-Stack <br><br>Web Developer</span>";
- let index = 0;
- let isDeleting = false;
+const intro = document.getElementById('intro');
+const text = "My name is Jiri <br><br>I am <span class='highlight'>Full-Stack <br><br>Web Developer</span>";
+let index = 0;
+let isDeleting = false;
 
- function type() {
-   let currentText = text.slice(0, index);
+// Constant variables moved outside the function
+const typingSpeed = 150;
+const deleteSpeed = 40;
 
-   if (isDeleting) {
-     currentText = text.slice(0, index - 1);
-     index--;
-   } else {
-     currentText = text.slice(0, index + 1);
-     index++;
-   }
+function type() {
+  let currentText;
+  
+  // Cache the text length outside the if-else condition
+  const textLength = text.length;
 
-   intro.innerHTML = currentText;
-   
-   // When reaching the end, start deleting
-   if (index === text.length + 1) {
-     isDeleting = true;
-   }
+  if (isDeleting) {
+    currentText = text.slice(0, index - 1);
+    index--;
+  } else {
+    currentText = text.slice(0, index + 1);
+    index++;
+  }
 
-   // When done deleting, reset to typing
-   if (index === 0) {
-     isDeleting = false;
-   }
+  intro.innerHTML = currentText;
 
-   // Speed up the typing and deleting
-   const typingSpeed = 150;
-   const deleteSpeed = 40;
-   const delay = isDeleting ? deleteSpeed : typingSpeed;
+  // Update the delay based on the current action
+  const delay = isDeleting ? deleteSpeed : typingSpeed;
 
-   setTimeout(type, delay);
- }
+  // When reaching the end or start, toggle isDeleting
+  if (index === textLength + 1) {
+    isDeleting = true;
+  } else if (index === 0) {
+    isDeleting = false;
+  }
+
+  // Call type function recursively after delay
+  setTimeout(type, delay);
+}
 
 // Start typing effect
 setTimeout(type, 200);
-
 
 // About Me animation 
 let firstScroll = true;

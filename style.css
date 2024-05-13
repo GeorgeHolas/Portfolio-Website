@@ -149,8 +149,33 @@ ul {
 .ProfilePic {
   margin-right: 1rem;
   filter: grayscale(0.4);
-	transform: translateY(0);
-	animation: float 5s ease-in-out infinite;
+  animation: slideInFromLeft 1.5s ease-out 0.5s;
+  animation-fill-mode: forwards; 
+  opacity: 0;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%); 
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.TextContainer {
+  flex: 2;
+}
+
+.ProfilePic img {
+  margin-top: 6rem;
+  margin-left: 15rem;
+  margin-right: 8rem;
+  max-width: 100%;
+  max-height: 100%;
+  	animation: float 5s ease-in-out infinite;
 	img { width: auto; height: auto; }
 }
 
@@ -166,17 +191,6 @@ ul {
 	}
 }
 
-.TextContainer {
-  flex: 2;
-}
-
-.ProfilePic img {
-  margin-top: 6rem;
-  margin-left: 15rem;
-  margin-right: 8rem;
-  max-width: 100%;
-  max-height: 100%;
-}
 
 /*About Me*/
 .hidden {

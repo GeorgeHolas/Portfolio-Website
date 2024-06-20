@@ -311,7 +311,7 @@ to {
   height: 18rem;
   text-align: center;
   transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
-  filter: blur(2px);
+  filter: blur(1px);
 }
 
 .Projects:hover {

@@ -5,8 +5,8 @@ let index = 0;
 let isDeleting = false;
 
 // Constant variables moved outside the function
-const typingSpeed = 110;
-const deleteSpeed = 20;
+const typingSpeed = 120;
+const deleteSpeed = 40;
 
 function type() {
   let currentText;
@@ -39,7 +39,7 @@ function type() {
 }
 
 // Start typing effect
-setTimeout(type, 900);
+setTimeout(type, 1500);
 
 // About Me animation 
 let firstScroll = true;

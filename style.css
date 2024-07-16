@@ -131,18 +131,18 @@ ul {
 .ProfilePic {
   margin-right: 1rem;
   filter: grayscale(0.4);
-  animation: slideInFromLeft 1.5s ease-out 0.5s;
-  animation-fill-mode: forwards; 
+  animation: slideBottom 5s ease forwards;
+  animation-delay: calc(0.8s * var(--i)) + 0.9s; 
   opacity: 0;
 }
 
-@keyframes slideInFromLeft {
+@keyframes slideBottom {
   from {
-    transform: translateX(-100%); 
+    transform: translateY(20%); 
     opacity: 0;
   }
   to {
-    transform: translateX(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
